@@ -13,7 +13,7 @@ class ItemRepository(private val itemDao: ItemDao) {
 
     }
 
-    fun getItem(): LiveData<List<ItemEntity>> {
+    fun getAllItems(): LiveData<List<ItemEntity>> {
         return itemDao.getAllItems()
     }
 }
