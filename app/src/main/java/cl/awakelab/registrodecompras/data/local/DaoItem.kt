@@ -6,11 +6,13 @@ import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
-interface ItemDao {
+interface DaoItem {
 
     @Insert
-    suspend fun insertItem(item: ItemEntity)
+    suspend fun insertarItem(itemClass: ItemClass)
 
-    @Query("SELECT * FROM table_item order by id ASC")
-    fun getAllItems(): LiveData<List<ItemEntity>>
+    @Query("SELECT * FROM item_table order by id ASC")
+    fun showItem(): LiveData<List<ItemClass>>
 }
+
+
